@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "Enter a number: "
+read number
+
+original=$number
+reverse=0
+
+while [ $number -gt 0 ]
+do
+    remainder=$((number % 10))
+    reverse=$((reverse * 10 + remainder))
+    number=$((number / 10))
+done
+
+if [ $original -eq $reverse ]
+then
+    echo "$original is a palindrome."
+else
+    echo "$original is not a palindrome."
+fi
